@@ -1,0 +1,97 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
+    "handler": "Microsoft.Azure.CreateUIDef",
+    "version": "0.1.2-preview",
+    "parameters": {
+      "basics": [
+              {}
+      ],
+
+            "steps": [
+              {
+                "name": "settings",
+                "label": "Gada Settings",
+                "subLabel": {
+                  "preValidation": "Configure your GADA",
+                  "postValidation": "Done"
+                },
+                "bladeTitle": "Settings",
+                "elements": [
+                  {
+                    "name": "sites_gada_dev_name",
+                    "type": "Microsoft.Compute.UserNameTextBox",
+                    "label": "Gada Name",
+                    "toolTip": "Gada Name",
+                    "constraints": {
+                      "required": true
+                    }
+                  },
+                  {
+                    "name": "\"\"sites_gada_dev_fx_name\",\"",
+                    "type": "Microsoft.Compute.UserNameTextBox",
+                    "label": "Gada Fx Name",
+                    "toolTip": "The name of Fx Gada",
+                    "constraints": {
+                      "required": true
+                    }
+                  },
+                  {
+                    "name": "sites_gada_kv_name",
+                    "type": "Microsoft.Compute.UserNameTextBox",
+                    "label": "Gada Key vault name",
+                    "toolTip": "Gada Key vault name",
+                    "constraints": {
+                      "required": true
+                    }
+                  },
+                  {
+                    "name": "serverfarms_gada_dev_appplan_name",
+                    "type": "Microsoft.Compute.UserNameTextBox",
+                    "label": "Gada Plan Name",
+                    "toolTip": "Gada Plan Name",
+                    "constraints": {
+                      "required": true
+                    }
+                  },
+                  {
+                    "name": "searchServices_gada_dev_search_name",
+                    "type": "Microsoft.Compute.UserNameTextBox",
+                    "label": "Gada Search Name",
+                    "toolTip": "Gada Search Name",
+                    "constraints": {
+                      "required": true
+                    }
+                  },
+                  {
+                    "name": "storageAccounts_gadadevstorage_name",
+                    "type": "Microsoft.Compute.UserNameTextBox",
+                    "label": "Gada Storage Account Name",
+                    "toolTip": "Gada Storage Account Name",
+                    "constraints": {
+                      "required": true
+                    }
+                  },
+                  {
+                    "name": "databaseAccounts_gada_dev_db_name",
+                    "type": "Microsoft.Compute.UserNameTextBox",
+                    "label": "Gada Gada DB Name",
+                    "toolTip": "Gada DB Name",
+                    "constraints": {
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            ],
+      "outputs": {
+        "location": "[location()]",
+        "sites_gada_dev_name": "[steps('settings').sites_gada_dev_name]",
+        "sites_gada_dev_fx_name": "[steps('settings').sites_gada_dev_fx_name]",
+        "sites_gada_kv_name": "[steps('settings').sites_gada_kv_name]",
+        "serverfarms_gada_dev_appplan_name": "[steps('settings').serverfarms_gada_dev_appplan_name]",
+        "searchServices_gada_dev_search_name": "[steps('settings').searchServices_gada_dev_search_name]",
+        "storageAccounts_gadadevstorage_name": "[steps('settings').storageAccounts_gadadevstorage_name]",
+        "databaseAccounts_gada_dev_db_name": "[steps('settings').databaseAccounts_gada_dev_db_name]"
+      }
+          }
+}
